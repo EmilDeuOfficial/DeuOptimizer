@@ -682,7 +682,7 @@ goto :eof
 :READ_KEY
 set "_TEMP=%~dp0._wk.tmp"
 if exist "!_TEMP!" del "!_TEMP!" >nul 2>&1
-powershell -NoProfile -Command "$t='!_TEMP!'; Start-Sleep -Milliseconds 100; while([Console]::KeyAvailable){$null=[Console]::ReadKey($true)}; Write-Host -NoNewline '  > '; $k=[Console]::ReadKey($true); $c=[string]$k.KeyChar; if($c -match '[0-9Cc]'){[System.IO.File]::WriteAllText($t,$c.ToUpper(),[System.Text.Encoding]::ASCII)}elseif($c -match '[Rr]'){Write-Host -NoNewline 'R'; $d=[Console]::ReadKey($true); [System.IO.File]::WriteAllText($t,'R'+([string]$d.KeyChar),[System.Text.Encoding]::ASCII)}"
+powershell -NoProfile -Command "$t='!_TEMP!'; Start-Sleep -Milliseconds 100; while([Console]::KeyAvailable){$null=[Console]::ReadKey($true)}; Write-Host -NoNewline '  > '; $k=[Console]::ReadKey($true); $c=[string]$k.KeyChar; if($c -match '[0-9CcSs]'){[System.IO.File]::WriteAllText($t,$c.ToUpper(),[System.Text.Encoding]::ASCII)}elseif($c -match '[Rr]'){Write-Host -NoNewline 'R'; $d=[Console]::ReadKey($true); [System.IO.File]::WriteAllText($t,'R'+([string]$d.KeyChar),[System.Text.Encoding]::ASCII)}"
 set "INPUT_VAL="
 if exist "!_TEMP!" (
     set /p "INPUT_VAL=" < "!_TEMP!"
