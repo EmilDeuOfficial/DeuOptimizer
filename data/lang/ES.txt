@@ -192,3 +192,4 @@ T_SVC_E= deshabilitado
 T_SON_E= rehabilitado
 M_ST=Ajustes
 M_STD=Idioma
+ST_AS=Autostart

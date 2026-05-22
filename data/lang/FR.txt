@@ -192,3 +192,4 @@ T_SVC_E= desactive
 T_SON_E= reactive
 M_ST=Parametres
 M_STD=Langue
+ST_AS=Autostart

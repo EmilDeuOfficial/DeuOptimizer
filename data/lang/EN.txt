@@ -192,3 +192,4 @@ T_SVC_E= disabled
 T_SON_E= re-enabled
 M_ST=Settings
 M_STD=Language
+ST_AS=Autostart

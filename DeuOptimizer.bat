@@ -2,6 +2,7 @@
 setlocal EnableDelayedExpansion
 
 title DeuOptimizer v3.1 - by Emil_Deu
+set "BATPATH=%~f0"
 
 if not exist "%~dp0data\" mkdir "%~dp0data\" >nul 2>&1
 if not exist "%~dp0data\lang\" mkdir "%~dp0data\lang\" >nul 2>&1
@@ -279,12 +280,25 @@ goto MAIN_MENU
 :: ============================================================
 :SETTINGS
 :: ============================================================
+set "AS_STATUS=OFF"
+for /f "usebackq" %%T in (`powershell -NoProfile -Command "if(Get-ScheduledTask -TaskName 'DeuOptimizer' -EA SilentlyContinue){'ON'}else{'OFF'}"`) do set "AS_STATUS=%%T"
 cls
-powershell -NoProfile -Command "Write-Host; Write-Host '  ==========================================' -ForegroundColor DarkGray; Write-Host '    !M_ST!' -ForegroundColor White; Write-Host '  ==========================================' -ForegroundColor DarkGray; Write-Host; Write-Host '   [1]  !M_STD!' -ForegroundColor Cyan; Write-Host; Write-Host '   [0]  !C_BACK!' -ForegroundColor DarkGray; Write-Host"
+powershell -NoProfile -Command "$as='!AS_STATUS!'; $asc=if($as -eq 'ON'){'Green'}else{'Red'}; Write-Host; Write-Host '  ==========================================' -ForegroundColor DarkGray; Write-Host '    !M_ST!' -ForegroundColor White; Write-Host '  ==========================================' -ForegroundColor DarkGray; Write-Host; Write-Host '   [1]  !M_STD!' -ForegroundColor Cyan; Write-Host '   [2]  !ST_AS!' -NoNewline -ForegroundColor Cyan; Write-Host (' - '+$as) -ForegroundColor $asc; Write-Host '   [3]  !LG_CLEAR!' -ForegroundColor Cyan; Write-Host; Write-Host '   [0]  !C_BACK!' -ForegroundColor DarkGray; Write-Host"
 call :READ_KEY
 set "ST=!INPUT_VAL!"
 if "!ST!"=="1" ( call :SELECT_LANG & call :LOAD_STRINGS & goto MAIN_MENU )
+if "!ST!"=="2" goto SETTINGS_AUTOSTART
+if "!ST!"=="3" ( del "!LOGFILE!" >nul 2>&1 & call :LOG_INIT & powershell -NoProfile -Command "Write-Host '   !LG_CLEARED!' -ForegroundColor Green" & timeout /t 1 >nul & goto SETTINGS )
 if "!ST!"=="0" goto MAIN_MENU
+goto SETTINGS
+
+:SETTINGS_AUTOSTART
+if "!AS_STATUS!"=="ON" (
+    powershell -NoProfile -Command "Unregister-ScheduledTask -TaskName 'DeuOptimizer' -Confirm:$false 2>$null; Write-Host '   !ST_AS! OFF' -ForegroundColor Red"
+) else (
+    powershell -NoProfile -Command "$p='!BATPATH!'; $a=New-ScheduledTaskAction -Execute 'cmd.exe' -Argument ('/c \"'+$p+'\"'); $t=New-ScheduledTaskTrigger -AtLogOn; $s=New-ScheduledTaskPrincipal -UserId $env:USERNAME -RunLevel Highest; Register-ScheduledTask -TaskName 'DeuOptimizer' -Action $a -Trigger $t -Principal $s -Force | Out-Null; Write-Host '   !ST_AS! ON' -ForegroundColor Green"
+)
+timeout /t 1 >nul
 goto SETTINGS
 
 :: ============================================================
