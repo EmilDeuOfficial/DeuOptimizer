@@ -279,9 +279,13 @@ goto MAIN_MENU
 :: ============================================================
 :SETTINGS
 :: ============================================================
-call :SELECT_LANG
-call :LOAD_STRINGS
-goto MAIN_MENU
+cls
+powershell -NoProfile -Command "Write-Host; Write-Host '  ==========================================' -ForegroundColor DarkGray; Write-Host '    !M_ST!' -ForegroundColor White; Write-Host '  ==========================================' -ForegroundColor DarkGray; Write-Host; Write-Host '   [1]  !M_STD!' -ForegroundColor Cyan; Write-Host; Write-Host '   [0]  !C_BACK!' -ForegroundColor DarkGray; Write-Host"
+call :READ_KEY
+set "ST=!INPUT_VAL!"
+if "!ST!"=="1" ( call :SELECT_LANG & call :LOAD_STRINGS & goto MAIN_MENU )
+if "!ST!"=="0" goto MAIN_MENU
+goto SETTINGS
 
 :: ============================================================
 :: ======  LANGUAGE SELECTION  ================================
