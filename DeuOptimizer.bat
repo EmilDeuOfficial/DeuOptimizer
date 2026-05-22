@@ -280,9 +280,9 @@ goto MAIN_MENU
 :: ============================================================
 :SETTINGS
 :: ============================================================
+cls
 set "AS_STATUS=OFF"
 for /f "usebackq" %%T in (`powershell -NoProfile -Command "if(Get-ScheduledTask -TaskName 'DeuOptimizer' -EA SilentlyContinue){'ON'}else{'OFF'}"`) do set "AS_STATUS=%%T"
-cls
 powershell -NoProfile -Command "$as='!AS_STATUS!'; $asc=if($as -eq 'ON'){'Green'}else{'Red'}; Write-Host; Write-Host '  ==========================================' -ForegroundColor DarkGray; Write-Host '    !M_ST!' -ForegroundColor White; Write-Host '  ==========================================' -ForegroundColor DarkGray; Write-Host; Write-Host '   [1]  !M_STD!' -ForegroundColor Cyan; Write-Host '   [2]  !ST_AS!' -NoNewline -ForegroundColor Cyan; Write-Host (' - '+$as) -ForegroundColor $asc; Write-Host '   [3]  !LG_CLEAR!' -ForegroundColor Cyan; Write-Host; Write-Host '   [0]  !C_BACK!' -ForegroundColor DarkGray; Write-Host"
 call :READ_KEY
 set "ST=!INPUT_VAL!"
