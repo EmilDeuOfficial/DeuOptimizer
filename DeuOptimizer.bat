@@ -280,13 +280,15 @@ goto MAIN_MENU
 
 :SELECT_LANG
 cls
-powershell -NoProfile -Command "Write-Host; Write-Host '  ==========================================' -ForegroundColor DarkGray; Write-Host '    LANGUAGE / SPRACHE' -ForegroundColor White; Write-Host '  ==========================================' -ForegroundColor DarkGray; Write-Host; Write-Host '   [1]  Deutsch' -ForegroundColor Cyan; Write-Host '   [2]  English' -ForegroundColor Cyan; Write-Host '   [3]  Espanol' -ForegroundColor Cyan; Write-Host '   [4]  Zhongwen / Simplified Chinese / ' -NoNewline -ForegroundColor Cyan; Write-Host '中文' -ForegroundColor Cyan; Write-Host"
+powershell -NoProfile -Command "Write-Host; Write-Host '  ==========================================' -ForegroundColor DarkGray; Write-Host '    LANGUAGE / SPRACHE' -ForegroundColor White; Write-Host '  ==========================================' -ForegroundColor DarkGray; Write-Host; Write-Host '   [1]  Deutsch' -ForegroundColor Cyan; Write-Host '   [2]  English' -ForegroundColor Cyan; Write-Host '   [3]  Espanol' -ForegroundColor Cyan; Write-Host '   [4]  Francais' -ForegroundColor Cyan; Write-Host '   [5]  ' -NoNewline -ForegroundColor Cyan; Write-Host 'Русский' -ForegroundColor Cyan; Write-Host '   [6]  Zhongwen / ' -NoNewline -ForegroundColor Cyan; Write-Host '中文' -ForegroundColor Cyan; Write-Host"
 call :READ_KEY
 set "LC=!INPUT_VAL!"
 if "!LC!"=="1" ( set "LANG=DE" & echo LANG=DE> "!LANGFILE!" & goto :eof )
 if "!LC!"=="2" ( set "LANG=EN" & echo LANG=EN> "!LANGFILE!" & goto :eof )
 if "!LC!"=="3" ( set "LANG=ES" & echo LANG=ES> "!LANGFILE!" & goto :eof )
-if "!LC!"=="4" ( set "LANG=ZH" & echo LANG=ZH> "!LANGFILE!" & goto :eof )
+if "!LC!"=="4" ( set "LANG=FR" & echo LANG=FR> "!LANGFILE!" & goto :eof )
+if "!LC!"=="5" ( set "LANG=RU" & echo LANG=RU> "!LANGFILE!" & goto :eof )
+if "!LC!"=="6" ( set "LANG=ZH" & echo LANG=ZH> "!LANGFILE!" & goto :eof )
 goto SELECT_LANG
 
 :: ============================================================
@@ -294,13 +296,9 @@ goto SELECT_LANG
 :: ============================================================
 
 :LOAD_STRINGS
-if /i not "!LANG!"=="ZH" (
-    for /f "usebackq tokens=1* delims==" %%A in ("!LANGDIR!\!LANG!.txt") do set "%%A=%%B"
-    goto :eof
-)
 for /f "usebackq" %%C in (`powershell -NoProfile -Command "([string](chcp.com)).split(':')[-1].Trim('.').Trim()"`) do set "_ORIG_CP=%%C"
 chcp 65001 >nul 2>&1
-for /f "usebackq tokens=1* delims==" %%A in ("!LANGDIR!\ZH.txt") do set "%%A=%%B"
+for /f "usebackq tokens=1* delims==" %%A in ("!LANGDIR!\!LANG!.txt") do set "%%A=%%B"
 chcp !_ORIG_CP! >nul 2>&1
 goto :eof
 
