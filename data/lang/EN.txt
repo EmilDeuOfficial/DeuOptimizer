@@ -190,3 +190,5 @@ T_RSV_S=Restoring default services...
 T_SVC_S=Disabling:
 T_SVC_E= disabled
 T_SON_E= re-enabled
+M_ST=Settings
+M_STD=Language

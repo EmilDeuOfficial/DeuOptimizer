@@ -190,3 +190,5 @@ T_RSV_S=Restauration services par defaut...
 T_SVC_S=Desactivation:
 T_SVC_E= desactive
 T_SON_E= reactive
+M_ST=Parametres
+M_STD=Langue

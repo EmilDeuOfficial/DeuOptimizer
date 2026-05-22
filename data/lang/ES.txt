@@ -190,3 +190,5 @@ T_RSV_S=Restaurando servicios por defecto...
 T_SVC_S=Deshabilitando:
 T_SVC_E= deshabilitado
 T_SON_E= rehabilitado
+M_ST=Ajustes
+M_STD=Idioma

@@ -190,3 +190,5 @@ T_RSV_S=Stelle Standard-Dienste wieder her...
 T_SVC_S=Deaktiviere:
 T_SVC_E= deaktiviert
 T_SON_E= reaktiviert
+M_ST=Einstellungen
+M_STD=Sprache

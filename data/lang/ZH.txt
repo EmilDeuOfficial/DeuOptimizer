@@ -190,3 +190,5 @@ T_RSV_S=正在恢复默认服务...
 T_SVC_S=正在禁用:
 T_SVC_E= 已禁用
 T_SON_E= 已恢复
+M_ST=设置
+M_STD=语言
