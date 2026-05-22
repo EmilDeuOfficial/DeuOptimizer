@@ -304,10 +304,14 @@ goto SELECT_LANG
 :: ============================================================
 
 :LOAD_STRINGS
-for /f "usebackq" %%C in (`powershell -NoProfile -Command "([string](chcp.com)).split(':')[-1].Trim('.').Trim()"`) do set "_ORIG_CP=%%C"
+if /i "!LANG!"=="RU" goto LS_UTF8
+if /i "!LANG!"=="ZH" goto LS_UTF8
+for /f "usebackq tokens=1* delims==" %%A in ("!LANGDIR!\!LANG!.txt") do set "%%A=%%B"
+goto :eof
+:LS_UTF8
 chcp 65001 >nul 2>&1
 for /f "usebackq tokens=1* delims==" %%A in ("!LANGDIR!\!LANG!.txt") do set "%%A=%%B"
-chcp !_ORIG_CP! >nul 2>&1
+chcp 850 >nul 2>&1
 goto :eof
 
 :: ============================================================
