@@ -1,7 +1,7 @@
 @echo off
 setlocal EnableDelayedExpansion
 
-title DeuOptimizer v3.0 - by Emil_Deu
+title DeuOptimizer v3.1 - by Emil_Deu
 
 if not exist "%~dp0data\" mkdir "%~dp0data\" >nul 2>&1
 if not exist "%~dp0data\lang\" mkdir "%~dp0data\lang\" >nul 2>&1

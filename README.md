@@ -1,10 +1,11 @@
 # DeuOptimizer
 
-A Windows 11 optimization tool with a terminal UI — built entirely in Batch + PowerShell.
+A Windows 11 optimization tool with a clean terminal UI — built entirely in Batch + PowerShell. No installs, no dependencies, just run as Administrator.
 
-![Version](https://img.shields.io/badge/version-v3.0-brightgreen)
+![Version](https://img.shields.io/badge/version-v3.1-brightgreen)
 ![Platform](https://img.shields.io/badge/platform-Windows%2011-blue)
 ![Language](https://img.shields.io/badge/shell-Batch%20%2B%20PowerShell-lightgrey)
+![Languages](https://img.shields.io/badge/languages-6-orange)
 
 ---
 
@@ -18,7 +19,7 @@ A Windows 11 optimization tool with a terminal UI — built entirely in Batch + 
 - **Aggression Levels** — ECO (safe) / TURBO (extended) / NUKE (maximum, aggressive)
 - **Full Reset** — Reverts all applied changes back to Windows defaults
 - **Action Log** — Every change is logged with timestamp
-- **4 Languages** — Deutsch, English, Español, 中文
+- **6 Languages** — Deutsch, English, Español, Français, Русский, 中文
 
 ---
 
@@ -46,10 +47,12 @@ A Windows 11 optimization tool with a terminal UI — built entirely in Batch + 
 DeuOptimizer.bat        ← main script
 data\
   lang\
-    DE.txt              ← German strings
-    EN.txt              ← English strings
-    ES.txt              ← Spanish strings
-    ZH.txt              ← Chinese strings (UTF-8)
+    DE.txt              ← German
+    EN.txt              ← English
+    ES.txt              ← Spanish
+    FR.txt              ← French
+    RU.txt              ← Russian (UTF-8)
+    ZH.txt              ← Chinese Simplified (UTF-8)
   DeuOptimizer_Log.txt  ← action log (auto-created)
   DeuOptimizer_Lang.cfg ← language preference (auto-created)
   DeuOptimizer_Level.cfg← aggression level (auto-created)
@@ -58,6 +61,11 @@ data\
 ---
 
 ## Changelog
+
+### v3.1
+- Added French (Français) and Russian (Русский) language support
+- Fixed non-Latin script rendering in language selection menu
+- Universal UTF-8 loading for all language files
 
 ### v3.0
 - Language strings moved to external `data\lang\` files

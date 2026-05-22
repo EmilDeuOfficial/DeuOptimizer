@@ -1,4 +1,4 @@
-﻿M_TITLE=DeuOptimizer  //  v3.0
+﻿M_TITLE=DeuOptimizer  //  v3.1
 M_1=快速优化
 M_1D=一键优化
 M_2=服务管理器

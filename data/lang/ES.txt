@@ -1,4 +1,4 @@
-M_TITLE=DeuOptimizer  //  v3.0
+M_TITLE=DeuOptimizer  //  v3.1
 M_1=Boost Rapido
 M_1D=Optimizacion Rapida
 M_2=Gestor de Servicios
