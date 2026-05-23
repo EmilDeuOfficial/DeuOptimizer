@@ -104,6 +104,7 @@ LG_CLEARED=日志已清除。
 SI_TITLE=系统信息
 SI_RAMF=可用内存:
 SI_RAMT=总内存:
+SI_GPU=GPU:
 SI_CPUL=CPU占用:
 EX_MSG=再见。
 T_TEL_S=正在禁用遥测服务...
