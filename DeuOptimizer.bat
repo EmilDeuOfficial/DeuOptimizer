@@ -1,7 +1,7 @@
 @echo off
 setlocal EnableDelayedExpansion
 
-title DeuOptimizer v3.1 - by Emil_Deu
+title DeuOptimizer v3.2 - by Emil_Deu
 set "BATPATH=%~f0"
 
 if not exist "%~dp0data\" mkdir "%~dp0data\" >nul 2>&1
@@ -283,7 +283,7 @@ goto MAIN_MENU
 :RESTORE_POINT
 :: ============================================================
 cls
-powershell -NoProfile -Command "Write-Host; Write-Host '  ==========================================' -ForegroundColor DarkGray; Write-Host '    !M_RP!' -ForegroundColor White; Write-Host '  ==========================================' -ForegroundColor DarkGray; Write-Host; Write-Host '  [*] !T_RP_S!' -ForegroundColor Yellow; try { Enable-ComputerRestore -Drive 'C:\' -ErrorAction SilentlyContinue; Checkpoint-Computer -Description 'DeuOptimizer v3.1' -RestorePointType 'MODIFY_SETTINGS' -ErrorAction Stop; Write-Host '  [+] !T_RP_E!' -ForegroundColor Green } catch { Write-Host '  [!] !T_RP_ERR!' -ForegroundColor Red }; Write-Host"
+powershell -NoProfile -Command "Write-Host; Write-Host '  ==========================================' -ForegroundColor DarkGray; Write-Host '    !M_RP!' -ForegroundColor White; Write-Host '  ==========================================' -ForegroundColor DarkGray; Write-Host; Write-Host '  [*] !T_RP_S!' -ForegroundColor Yellow; try { Enable-ComputerRestore -Drive 'C:\' -ErrorAction SilentlyContinue; Checkpoint-Computer -Description 'DeuOptimizer v3.2' -RestorePointType 'MODIFY_SETTINGS' -ErrorAction Stop; Write-Host '  [+] !T_RP_E!' -ForegroundColor Green } catch { Write-Host '  [!] !T_RP_ERR!' -ForegroundColor Red }; Write-Host"
 call :LOG "APPLY" "System restore point created"
 call :DONE_MSG
 goto MAIN_MENU
