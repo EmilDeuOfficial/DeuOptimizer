@@ -60,18 +60,18 @@ Tested on Windows 11 (idle, same system, same conditions):
 ## File Structure
 
 ```
-DeuOptimizer.bat        ← main script
+DeuOptimizer.bat         ← main script
 data\
   lang\
-    DE.txt              ← German
-    EN.txt              ← English
-    ES.txt              ← Spanish
-    FR.txt              ← French
-    RU.txt              ← Russian (UTF-8)
-    ZH.txt              ← Chinese Simplified (UTF-8)
-  DeuOptimizer_Log.txt  ← action log (auto-created)
-  DeuOptimizer_Lang.cfg ← language preference (auto-created)
-  DeuOptimizer_Level.cfg← aggression level (auto-created)
+    DE.txt               ← German
+    EN.txt               ← English
+    ES.txt               ← Spanish
+    FR.txt               ← French
+    RU.txt               ← Russian (UTF-8)
+    ZH.txt               ← Chinese Simplified (UTF-8)
+  DeuOptimizer_Log.txt   ← action log (auto-created)
+  DeuOptimizer_Lang.cfg  ← language preference (auto-created)
+  DeuOptimizer_Level.cfg ← aggression level (auto-created)
 ```
 
 ---
