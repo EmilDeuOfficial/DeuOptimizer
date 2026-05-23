@@ -104,6 +104,7 @@ LG_CLEARED=Journal efface.
 SI_TITLE=INFO SYSTEME
 SI_RAMF=RAM libre:
 SI_RAMT=RAM totale:
+SI_GPU=GPU:
 SI_CPUL=Charge CPU:
 EX_MSG=Au revoir.
 T_TEL_S=Desactivation services telemetrie...

@@ -1,4 +1,4 @@
-﻿M_TITLE=DeuOptimizer  //  v3.1
+M_TITLE=DeuOptimizer  //  v3.1
 M_1=Быстрая оптимизация
 M_1D=Оптимизация одним кликом
 M_2=Менеджер служб

@@ -104,6 +104,7 @@ LG_CLEARED=Registro borrado.
 SI_TITLE=INFO DEL SISTEMA
 SI_RAMF=RAM libre:
 SI_RAMT=RAM total:
+SI_GPU=GPU:
 SI_CPUL=Carga CPU:
 EX_MSG=Hasta luego.
 T_TEL_S=Deshabilitando servicios de telemetria...
