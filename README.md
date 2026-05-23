@@ -2,7 +2,7 @@
 
 A Windows 11 optimization tool with a clean terminal UI — built entirely in Batch + PowerShell. No installs, no dependencies, just run as Administrator.
 
-![Version](https://img.shields.io/badge/version-v3.1-brightgreen)
+![Version](https://img.shields.io/badge/version-v3.2-brightgreen)
 ![Platform](https://img.shields.io/badge/platform-Windows%2011-blue)
 ![Language](https://img.shields.io/badge/shell-Batch%20%2B%20PowerShell-lightgrey)
 ![Languages](https://img.shields.io/badge/languages-6-orange)
@@ -17,8 +17,10 @@ A Windows 11 optimization tool with a clean terminal UI — built entirely in Ba
 - **Gaming Mode** — Game Mode, Ultimate Power Plan, HAGS, Nagle Algorithm, Mouse Acceleration, GameDVR
 - **Network Boost** — DNS flush, Winsock reset, QoS, TCP optimization, Network Throttling
 - **Aggression Levels** — ECO (safe) / TURBO (extended) / NUKE (maximum, aggressive)
+- **Restore Point** — Creates a Windows System Restore Point before applying changes
 - **Full Reset** — Reverts all applied changes back to Windows defaults
 - **Action Log** — Every change is logged with timestamp
+- **System Info** — Live overview of OS, CPU, GPU, RAM and CPU load
 - **6 Languages** — Deutsch, English, Español, Français, Русский, 中文
 
 ---
@@ -77,6 +79,13 @@ data\
 ---
 
 ## Changelog
+
+### v3.2
+- Added Create Restore Point option ([8] in main menu)
+- Added GPU info to System Info screen
+- Dynamic label alignment in System Info (works correctly for all languages including CJK)
+- English moved to top of language selection
+- Window height auto-fitted to main menu content
 
 ### v3.1
 - Added French (Français) and Russian (Русский) language support
