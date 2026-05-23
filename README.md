@@ -23,6 +23,22 @@ A Windows 11 optimization tool with a clean terminal UI — built entirely in Ba
 
 ---
 
+## Benchmark
+
+Tested on Windows 11 (idle, same system, same conditions):
+
+| Metric | Before | After | Improvement |
+|---|---|---|---|
+| CPU Load | 6% | 2–3% | ~60% less |
+| CPU Clock | 1.60 GHz | 3.99 GHz | +149% |
+| Processes | 195 | 180 | −15 |
+| Threads | 3280 | 3220 | −60 |
+| Handles | 80500 | 79850 | −650 |
+
+> The clock speed difference is the most significant — Windows was throttling the CPU in its default power plan. With the Ultimate Power Plan applied, the processor runs at full speed.
+
+---
+
 ## Requirements
 
 - Windows 11
