@@ -1,0 +1,13 @@
+Normal:
+Auslastung = 6%
+Prozesse = 195
+Threads = 3280
+Handles = 80500
+Geschwindigkeit = 1,60 Ghz
+
+Alle Tweaks:
+Auslastung = 2-3%
+Prozesse = 180
+Threads = 3220
+Handles = 79850
+Geschwindigkeit = 3,99 Ghz
