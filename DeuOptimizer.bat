@@ -334,6 +334,12 @@ goto SELECT_LANG
 :: ============================================================
 
 :LOAD_STRINGS
+if not exist "!LANGDIR!\" (
+    cls
+    powershell -NoProfile -Command "Write-Host; Write-Host '  [ERROR] Language files not found!' -ForegroundColor Red; Write-Host '  Place the data\lang\ folder next to DeuOptimizer.bat' -ForegroundColor Yellow; Write-Host '  Download the full package from GitHub (not just the .bat file).' -ForegroundColor Yellow; Write-Host"
+    pause
+    exit /b 1
+)
 if /i "!LANG!"=="RU" goto LS_UTF8
 if /i "!LANG!"=="ZH" goto LS_UTF8
 for /f "usebackq tokens=1* delims==" %%A in ("!LANGDIR!\!LANG!.txt") do set "%%A=%%B"
